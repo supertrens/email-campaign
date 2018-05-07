@@ -5,4 +5,6 @@ server.get('/' , (request , response) => {
   response.send({ HI : 'Peter'});
 });
 
-server.listen(5000);
+
+const PORT = process.env.PORT || 5000;
+server.listen(PORT);
