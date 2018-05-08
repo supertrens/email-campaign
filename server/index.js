@@ -1,10 +1,8 @@
 const express = require('express');
 const server = express();
-
-server.get('/' , (request , response) => {
-  response.send({ HI : 'Peter'});
-});
-
-
 const PORT = process.env.PORT || 5000;
+require('./routes/authRoutes')(server);
+require('./services/passport') // Make it execute
+
+
 server.listen(PORT);
